@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>1. Ariketa</title>
+    <style>
+        body { font-family: Arial, sans-serif; color: #141212dd;background-color: rgb(213, 224, 101);}
+        h1 { text-align: center; color: #767c0f; }
+        h2 { font-size:20px; color: black}
+        nav a { font-weight:bold; color: blue}
+    </style>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+  <nav>
+    <a href="Sarrera.html"> Sarrera </a>
+    <a href="Lehena.html"> NBA </a>
+    <a href="Bigarrena.html"> Irudiak </a>
+  </nav>
+</body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imagen y Título en Movimiento</title>
+  <style>
+      /* Estilos para el contenedor */
+      #container {
+          position: relative;
+          width: 650px; /* Ancho del contenedor */
+          text-align: center;
+      }
+
+      /* Estilo de la imagen */
+      #movingImage {
+          position: absolute;
+          width: 600px; /* Aumentar el tamaño de la imagen */
+          height: auto;
+      }
+
+      /* Estilo del título */
+      #imageTitle {
+          font-size: 20px;
+          color: #333;
+          position: absolute;
+          top: -40px; /* Ajusta para que esté encima de la imagen */
+          width: 100%;
+      }
+  </style>
+</head>
+<body>
+
+<div id="container">
+  <!-- Nire ustez jokalari onena eta dibertigarriena dena: STEPHEN CURRY -->
+  <div id="imageTitle">Nire ustez jokalari onena eta dibertigarriena dena: STEPHEN CURRY</div>
+  <img id="movingImage" src="https://swingcompleto.com/wp-content/uploads/2024/11/CURRY-NBA.jpg" alt="Imagen en movimiento">
+</div>
+
+<script>
+  // Obtener elementos
+  const image = document.getElementById("movingImage");
+  const title = document.getElementById("imageTitle");
+  const container = document.getElementById("container");
+
+  // Configuración de velocidad y posición inicial
+  let posX = 100; // Posición inicial en X
+  let posY = 100; // Posición inicial en Y
+  let velX = 2;   // Velocidad en X
+  let velY = 2;   // Velocidad en Y
+
+  // Función para mover la imagen y el título juntos
+  function moveImage() {
+      // Actualizar posiciones
+      posX += velX;
+      posY += velY;
+
+      // Detectar colisiones con los bordes de la ventana y cambiar dirección
+      if (posX + container.offsetWidth > window.innerWidth || posX < 0) {
+          velX *= -1; // Cambiar dirección en X
+      }
+      if (posY + container.offsetHeight > window.innerHeight || posY < 0) {
+          velY *= -1; // Cambiar dirección en Y
+      }
+
+      // Aplicar nuevas posiciones al contenedor (mueve tanto la imagen como el título)
+      container.style.left = posX + "px";
+      container.style.top = posY + "px";
+
+      // Solicitar el próximo cuadro de animación
+      requestAnimationFrame(moveImage);
+  }
+
+  // Establecer el contenedor en posición absoluta para que pueda moverse libremente
+  container.style.position = "absolute";
+
+  // Iniciar el movimiento
+  moveImage();
+</script>
+
+</body>
+</html>

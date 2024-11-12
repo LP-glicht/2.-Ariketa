@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>1. Ariketa</title>
+    <style>
+        body { font-family: Arial, sans-serif; color: #141212dd;background-color: rgb(192, 132, 222);}
+        h1 { text-align: center; color: #6d0f7c; }
+        h2 { font-size:20px; color: black}
+        nav a { font-weight:bold; color: blue}
+    </style>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+  <nav>
+    <a href="Sarrera.html"> Sarrera </a>
+    <a href="Lehena.html"> NBA </a>
+    <a href="Hirugarrena.html"> Jokalaria </a>
+  </nav>
+
+  <!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irudia Tamaina Handian Ikusi</title>
+    <style>
+        /* Popup efekturako estiloak */
+        .modal {
+            display: none; /* Hasi hasieran ezkutatuta */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo iluna */
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 80%; /* Irudiaren gehienezko zabalera */
+            max-height: 80%; /* Irudiaren gehienezko altuera */
+            animation: zoom 0.5s; /* Zoom animazioa */
+        }
+
+        /* Zoom efektua */
+        @keyframes zoom {
+            from { transform: scale(0) }
+            to { transform: scale(1) }
+        }
+
+        /* Ixteko botoia */
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+
+<!-- Txikiko irudia -->
+<img id="smallImage" src="https://wallpapers.com/images/hd/nba-players-4c3mv5wmbz30sxdv.jpg" alt="Txiki ikusten den irudia" style="width: 200px; cursor: pointer;">
+
+<!-- Popup modala irudia handiagoan erakusteko -->
+<div id="myModal" class="modal">
+    <span class="close">&times;</span> <!-- Ixteko botoia -->
+    <img class="modal-content" id="largeImage" src="https://wallpapers.com/images/hd/nba-players-4c3mv5wmbz30sxdv.jpg" alt="Handi ikusten den irudia">
+</div>
+
+<script>
+    // Elementuak lortu
+    var modal = document.getElementById("myModal");
+    var smallImage = document.getElementById("smallImage");
+    var closeButton = document.getElementsByClassName("close")[0];
+
+    // Txikiko irudian klik eginez modal-a erakutsi
+    smallImage.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // "X" sakatzean modal-a itxi
+    closeButton.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Modal-etik kanpo klik eginez gero ere itxi
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+<br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MULh1TNk7nc?si=UpaeTpNL8lYbDW0y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<br>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MP3 Audioa</title>
+</head>
+
+<!-- Audio con controles -->
+<audio controls>
+  <source src="C:\Users\LANDER\Downloads\IKT karpeta\nba-boy-trap-music-118053.mp3" type="audio/mpeg">
+</audio>
+
+</html>
